@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+		integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+
+	<!-- The loading of KaTeX is deferred to speed up page rendering -->
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+		integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+		crossorigin="anonymous"></script>
+
+	<!-- To automatically render math in text elements, include the auto-render extension: -->
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+		integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+		onload="renderMathInElement(document.body);"></script>
+
+	<title>Fixed-time convergent differentiator</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../index.html" class="logo">
+					<span class="symbol"><img src="../images/pic13.jpg" alt="" /></span><span class="title">Adan
+						Marquez</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Fixed-time convergent differentiator</h1>
+
+				<div class="tool-tags">
+					<span class="tool-tag">Matlab</span>
+					<span class="tool-tag">Simulink</span>
+					<span class="tool-tag">Nonlinear Control</span>
+				</div>
+				<div style="display: flex; justify-content: center; margin: 40px 0;">
+					<iframe width="720" height="480" src="https://www.youtube.com/embed/etXKOGwM4bk" frameborder="0"
+						allowfullscreen>
+					</iframe>
+				</div>
+				</iframe>
+				<p>This project addresses an experimental evaluation of
+					a fixed-time convergent differentiator-based feedback controller
+					for a fully actuated hexacopter. The differentiator can retrieve
+					enough smoothly full states from partial state measurement, in
+					this case, the velocity of the rotorcraft in a fixed-time independent
+					of initial conditions. Then, a feedback controller based on
+					the full state estimations is designed for the trajectory tracking
+					task. The performance of the proposed control scheme is demonstrated with real
+					flight experiments implemented in a customized fully actuated
+					hexacopter, showing the feasibility of estimating unmeasurable
+					states and trajectory tracking.</p>
+				<div>
+					\[ f(x) = x \]
+				</div>
+			</div>
+		</div>
+
+		<!-- References Section -->
+		<section id="references" class="section">
+			<div class="inner">
+				<header class="major">
+					<h2>References</h2>
+				</header>
+				<ol style="line-height: 1.6; padding-left: 1.2em;">
+					<li>
+						A. Miranda-Moya, H. Castañeda, and H. Wang, "Fixed-time differentiator-based adaptive
+						nonsingular fast
+						terminal image-based visual servoing for a quadrotor UAV subject to turbulent wind,"
+						<i>IEEE Transactions on Aerospace and Electronic Systems</i>,
+						vol. 60, no. 3, pp. 2807–2818, Jun. 2024.
+						<a href="https://doi.org/10.1109/TAES.2024.3354229" target="_blank"
+							style="color: #3273dc;">doi:10.1109/TAES.2024.3354229</a>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

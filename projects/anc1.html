@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+		integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+
+	<!-- The loading of KaTeX is deferred to speed up page rendering -->
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+		integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+		crossorigin="anonymous"></script>
+
+	<!-- To automatically render math in text elements, include the auto-render extension: -->
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+		integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+		onload="renderMathInElement(document.body);"></script>
+	<title>Adaptive Sliding Mode Control</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="../index.html" class="logo">
+					<span class="symbol"><img src="../images/pic13.jpg" alt="" /></span><span
+						class="title">Phantom</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Adaptive Sliding Mode Control</h1>
+				<span class="image main"><img src="../images/pic13.jpg" alt="" /></span>
+				<p>
+					This page summarizes the core equations of an adaptive sliding mode controller for
+					trajectory tracking under parametric uncertainty and bounded disturbances. The controller
+					combines a sliding manifold for robust error dynamics with an online adaptation law that
+					updates the uncertain parameters in real time.
+				</p>
+				<p>
+					For the tracking error \( e = x - x_d \), a standard first-order sliding surface is defined as
+				</p>
+				<div>
+					\[
+					s = \dot{e} + \Lambda e
+					\]
+				</div>
+				<p>
+					where \( \Lambda \in \mathbb{R}^{n \times n} \) is a positive definite design matrix. Assuming the
+					dynamics can be written as
+				</p>
+				<div>
+					\[
+					M(x)\ddot{x} + C(x,\dot{x})\dot{x} + g(x) = Y(x,\dot{x},x_d,\dot{x}_d,\ddot{x}_d)\theta + d(t) + u
+					\]
+				</div>
+				<p>
+					the adaptive sliding mode control law is chosen as
+				</p>
+				<div>
+					\[
+					u = -Y(x,\dot{x},x_d,\dot{x}_d,\ddot{x}_d)\hat{\theta} - K s - \hat{\rho}\,\mathrm{sat}\!\left(\frac{s}{\phi}\right)
+					\]
+				</div>
+				<p>
+					where \( K \) is a positive definite gain matrix, \( \hat{\theta} \) is the online estimate of the
+					uncertain parameter vector \( \theta \), and \( \hat{\rho} \) adapts the robust switching gain.
+					The saturation function reduces chattering inside the boundary layer \( \phi > 0 \).
+				</p>
+				<p>
+					A common parameter adaptation law is
+				</p>
+				<div>
+					\[
+					\dot{\hat{\theta}} = \Gamma Y^\top s
+					\]
+				</div>
+				<p>
+					with \( \Gamma \in \mathbb{R}^{p \times p} \) symmetric positive definite. The switching gain can
+					also be adapted online through
+				</p>
+				<div>
+					\[
+					\dot{\hat{\rho}} = \gamma_{\rho}\|s\|, \qquad \hat{\rho}(0) > 0
+					\]
+				</div>
+				<p>
+					To study stability, define the Lyapunov candidate
+				</p>
+				<div>
+					\[
+					V = \frac{1}{2}s^\top M(x)s + \frac{1}{2}\tilde{\theta}^\top \Gamma^{-1}\tilde{\theta}
+					+ \frac{1}{2\gamma_{\rho}}\tilde{\rho}^{\,2}
+					\]
+				</div>
+				<p>
+					where \( \tilde{\theta} = \theta - \hat{\theta} \) and \( \tilde{\rho} = \rho - \hat{\rho} \). Under the
+					preceding control and adaptation laws, the closed-loop derivative satisfies
+				</p>
+				<div>
+					\[
+					\dot{V} \le - s^\top K s - \left(\hat{\rho} - \|d(t)\|\right)\|s\|
+					\]
+				</div>
+				<p>
+					which implies boundedness of all closed-loop signals and convergence of the tracking error to
+					a neighborhood of the sliding manifold. With sufficiently large gains and disturbance estimation,
+					the manifold can be made arbitrarily tight for high-accuracy tracking.
+				</p>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Connect with me</h2>
+					<ul class="icons">
+						<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Linkedin</span></a>
+						</li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

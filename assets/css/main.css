@@ -2706,7 +2706,7 @@ input, select, textarea {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #f2849e;
+				background-color: #5d6d7e;
 			}
 
 			.tiles article.style2 > .image:before {
@@ -3327,3 +3327,42 @@ input, select, textarea {
 			}
 
 		}
+.tool-tags {
+	margin-top: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+}
+
+.tool-tag {
+	background-color: #e0e0e0;
+	color: #333;
+	padding: 0.4em 0.8em;
+	border-radius: 1.5em;
+	font-size: 0.9em;
+	font-weight: 500;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+#references {
+	margin-top: 1em;
+	padding: 1em;
+	font-size: 0.95em;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+  }
+  #references h2 {
+	margin-bottom: 0.5em;
+  }
+  #references ol {
+	padding-left: 1.2em;
+  }
+  #references a {
+	color: #0066cc;
+	text-decoration: none;
+  }
+  #references a:hover {
+	text-decoration: underline;
+  }
+  
